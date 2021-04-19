@@ -40,4 +40,4 @@ jobs:
       uses: actions/upload-artifact@v2.2.3
       with:
         name: PartsUnlimitedBuild
-        path: _build
+        path: ./_build/
