@@ -50,7 +50,7 @@ jobs:
       uses: actions/download-artifact@v2.0.9
       with:
         name: PartsUnlimitedBuild
-        path: $(System.DefaultWorkingDirectory)  
+        path: drop
         
     - name: Azure Login
       uses: azure/login@v1
@@ -62,4 +62,5 @@ jobs:
       with: 
        app-name: ${{ env.AZURE_WEBAPP_NAME }} # Replace with your app name
        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE  }}
-       package: $(System.DefaultWorkingDirectory)/**/*.PartsUnlimitedBuild.zip
+       package: drop/**.zip
+
